@@ -115,7 +115,7 @@ function HeadSection(props) {
                     >
                       <Box mb={4}>
                         <Typography variant={isWidthUpLg ? "h3" : "h4"}>
-                          Hire Best Talent with Infinite Horizons
+                          Hire The Best Talent with Infinite Horizons
                         </Typography>
                       </Box>
                       <div>
@@ -133,9 +133,8 @@ function HeadSection(props) {
                           fullWidth
                           className={classes.extraLargeButton}
                           classes={{ label: classes.extraLargeButtonLabel }}
-                          href="https://github.com/dunky11/react-saas-template"
                         >
-                          Download from GitHub
+                          Register Your Company
                         </Button>
                       </div>
                     </Box>
