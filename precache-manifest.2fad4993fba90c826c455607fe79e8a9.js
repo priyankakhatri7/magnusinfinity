@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/infinitehorizons/static/js/main.fdd28b0d.chunk.js"
   },
   {
-    "revision": "be6d336ca3999a0891de",
-    "url": "/infinitehorizons/static/js/runtime~main.bf2de106.js"
+    "revision": "99df68f66523adeb8095",
+    "url": "/infinitehorizons/static/js/runtime~main.e30700a9.js"
   },
   {
     "revision": "f7f3973ba4421a3c9d05",
@@ -48,8 +48,8 @@ self.__precacheManifest = [
     "url": "/infinitehorizons/static/js/9.07e2e19f.chunk.js"
   },
   {
-    "revision": "3cc34cde0460ef6560de",
-    "url": "/infinitehorizons/static/js/10.14e7a04a.chunk.js"
+    "revision": "6a2e7703fcd7a78ba0ec",
+    "url": "/infinitehorizons/static/js/10.bc1dfac7.chunk.js"
   },
   {
     "revision": "09b5f53e82a990ad52ef",
@@ -92,7 +92,7 @@ self.__precacheManifest = [
     "url": "/infinitehorizons/static/js/20.cc499fde.chunk.js"
   },
   {
-    "revision": "d24c07cb7431516932977dd1c812a751",
+    "revision": "3168a7ac79cbcd8a75455b9ed2b9ede0",
     "url": "/infinitehorizons/index.html"
   }
 ];
