@@ -75,7 +75,7 @@ function NavBar(props) {
               display="inline"
               color="primary"
             >
-              Wa
+              Infinite
             </Typography>
             <Typography
               variant="h4"
@@ -83,7 +83,7 @@ function NavBar(props) {
               display="inline"
               color="secondary"
             >
-              Ver
+              Horizons
             </Typography>
           </div>
           <div>
