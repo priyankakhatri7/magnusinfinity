@@ -1,8 +1,8 @@
 {
-  "name": "infinite-horizons",
+  "name": "magnus-infinity",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://priyankakhatri7.github.io/infinitehorizons",
+  "homepage": "https://priyankakhatri7.github.io/magnusinfinity",
   "description": "Technical HR Solutions",
   "dependencies": {
     "@date-io/date-fns": "^1.3.13",
