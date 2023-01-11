@@ -235,7 +235,7 @@ function NavBar(props) {
                 display="inline"
                 color="primary"
               >
-                Infinite
+                Magnus
               </Typography>
               <Typography
                 variant="h4"
@@ -243,7 +243,7 @@ function NavBar(props) {
                 display="inline"
                 color="secondary"
               >
-                Horizons
+                Infinity
               </Typography>
             </Hidden>
           </Box>
