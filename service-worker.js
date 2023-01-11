@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/magnusinfinity/precache-manifest.72afa514d7b29e08020721fa66bbb60a.js"
+  "/magnusinfinity/precache-manifest.a7006ad6c05dda5e0fd8e047fc5b51f5.js"
 );
 
 workbox.clientsClaim();

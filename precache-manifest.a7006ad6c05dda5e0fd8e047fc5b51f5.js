@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/magnusinfinity/static/js/main.2230fa79.chunk.js"
   },
   {
-    "revision": "5c807241bd25ba6fa03f",
-    "url": "/magnusinfinity/static/js/runtime~main.d2f26c6d.js"
+    "revision": "da5946a572a9ab51349e",
+    "url": "/magnusinfinity/static/js/runtime~main.8304d007.js"
   },
   {
     "revision": "0318b79839430d56c17d",
@@ -48,8 +48,8 @@ self.__precacheManifest = [
     "url": "/magnusinfinity/static/js/9.484f0014.chunk.js"
   },
   {
-    "revision": "4415cf11cacdac89b924",
-    "url": "/magnusinfinity/static/js/10.21aed4be.chunk.js"
+    "revision": "bba7305d5e08cf2e568b",
+    "url": "/magnusinfinity/static/js/10.f69e0ea9.chunk.js"
   },
   {
     "revision": "5e9c22277b90ee37a9b0",
@@ -92,7 +92,7 @@ self.__precacheManifest = [
     "url": "/magnusinfinity/static/js/20.cc499fde.chunk.js"
   },
   {
-    "revision": "b279a9aca55b8a305ceeb2376fe37128",
+    "revision": "bca531df148fe5de288cdd68da13e675",
     "url": "/magnusinfinity/index.html"
   }
 ];
