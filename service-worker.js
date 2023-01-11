@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/infinitehorizons/precache-manifest.2fad4993fba90c826c455607fe79e8a9.js"
+  "/magnusinfinity/precache-manifest.9224c1ac70d28c6bbf7531358dbadca0.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/infinitehorizons/index.html", {
+workbox.routing.registerNavigationRoute("/magnusinfinity/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
