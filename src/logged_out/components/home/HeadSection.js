@@ -115,7 +115,7 @@ function HeadSection(props) {
                     >
                       <Box mb={4}>
                         <Typography variant={isWidthUpLg ? "h3" : "h4"}>
-                          Hire The Best Talent with Infinite Horizons
+                          Hire The Best Talent with Magnus Infinity
                         </Typography>
                       </Box>
                       <div>

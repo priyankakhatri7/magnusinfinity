@@ -32,13 +32,13 @@ function Main(props) {
   const selectHome = useCallback(() => {
     smoothScrollTop();
     document.title =
-      "Infinite Horizons - Hire Best Talent";
+      "Magnus Infinity - Hire Best Talent";
     setSelectedTab("Home");
   }, [setSelectedTab]);
 
   const selectBlog = useCallback(() => {
     smoothScrollTop();
-    document.title = "Infinite Horizons - Blog";
+    document.title = "Magnus Infinity - Blog";
     setSelectedTab("Blog");
   }, [setSelectedTab]);
 
