@@ -44,12 +44,17 @@ function NavBar(props) {
   } = props;
   const menuItems = [
     {
-      link: "/",
-      name: "Home",
+      link: "/magnusinfinity",
+      name: "Employer",
       icon: <HomeIcon className="text-white" />
     },
     {
-      link: "/blog",
+      link: "/magnusinfinity/candidate",
+      name: "Candidate",
+      icon: <HomeIcon className="text-white" />
+    },
+    {
+      link: "/magnusinfinity/blog",
       name: "Blog",
       icon: <BookIcon className="text-white" />
     },

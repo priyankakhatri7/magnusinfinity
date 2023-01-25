@@ -42,6 +42,12 @@ function Main(props) {
     setSelectedTab("Blog");
   }, [setSelectedTab]);
 
+  const selectCandidate = useCallback(() => {
+    smoothScrollTop();
+    document.title = "Magnus Infinity - Candidate";
+    setSelectedTab("Candidate");
+  }, [setSelectedTab])
+
   const openLoginDialog = useCallback(() => {
     setDialogOpen("login");
     setIsMobileDrawerOpen(false);
@@ -131,6 +137,7 @@ function Main(props) {
         blogPosts={blogPosts}
         selectHome={selectHome}
         selectBlog={selectBlog}
+        selectCandidate={selectCandidate}
       />
       <Footer />
     </div>

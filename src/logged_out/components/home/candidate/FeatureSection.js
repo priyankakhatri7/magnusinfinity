@@ -9,11 +9,11 @@ import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
 import CloudIcon from "@mui/icons-material/Cloud";
 import MeassageIcon from "@mui/icons-material/Message";
 import CancelIcon from "@mui/icons-material/Cancel";
-import calculateSpacing from "./calculateSpacing";
+import calculateSpacing from "../calculateSpacing";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { withTheme } from "@mui/styles";
 import FeatureCard from "./FeatureCard";
-import useWidth from "../../../shared/functions/useWidth";
+import useWidth from "../../../../shared/functions/useWidth";
 
 const iconSize = 30;
 
@@ -95,24 +95,24 @@ const features_bckup = [
 const features = [
   {
     color: "#00C853",
-    headline: "Shortlist Best Candidates",
-    text: "We shortlist top 2% of the candidates suitable for your job description. We provide you curated list of suitable candidates",
+    headline: "Apply To Jobs",
+    text: "Apply to as many of your aspiring jobs. Get shortlisted based on your skills",
     icon: <ComputerIcon style={{ fontSize: iconSize }} />,
     mdDelay: "0",
     smDelay: "0",
   },
   {
     color: "#6200EA",
-    headline: "Scheduling Interviews",
-    text: "Once you shortlist candidates from our curated list, we find the best matching time for you and the candidates and send meeting invites.",
-    icon: <CalendarTodayIcon style={{ fontSize: iconSize }} />,
+    headline: "Curated Trainings",
+    text: "Access Free Upcoming Trainings",
+    icon: <CloudIcon style={{ fontSize: iconSize }} />,
     mdDelay: "200",
     smDelay: "200",
   },
   {
     color: "#0091EA",
-    headline: "Sharing Feedback",
-    text: "We help you in sharing the feedback to the candidates as well as getting feedback from the candidate.",
+    headline: "Helpful Blogs",
+    text: "Read blogs and enhance your knowledge",
     icon: <MeassageIcon style={{ fontSize: iconSize }} />,
     mdDelay: "400",
     smDelay: "0",

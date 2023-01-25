@@ -3,16 +3,9 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Grid, Typography, Card, Button, Hidden, Box } from "@mui/material";
 import withStyles from "@mui/styles/withStyles";
-import WaveBorder from "../../../shared/components/WaveBorder";
-import ZoomImage from "../../../shared/components/ZoomImage";
+import WaveBorder from "../../../../shared/components/WaveBorder";
+import ZoomImage from "../../../../shared/components/ZoomImage";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import {
-  FiCard,
-  FiCardActionArea,
-  FiCardActions,
-  FiCardContent,
-  FiCardMedia
-} from "./FullImageCard";
 
 const styles = (theme) => ({
   extraLargeButtonLabel: {
@@ -119,16 +112,10 @@ function HeadSection(props) {
                       flexDirection="column"
                       justifyContent="space-between"
                       height="100%"
-                      backgroundImage={`${process.env.PUBLIC_URL}/images/logged_out/employers.jpeg`}
-                      styles={{backgroundImage: `${process.env.PUBLIC_URL}/images/logged_out/employers.jpeg`,
-                          backgroundSize: "cover",
-                          height: "100vh",
-                          color: "#f5f5f5"
-                      }}
                     >
                       <Box mb={4}>
                         <Typography variant={isWidthUpLg ? "h3" : "h4"}>
-                          Hire The Best Talent with Magnus Infinity
+                          Get Your Dream Job with Magnus Infinity
                         </Typography>
                       </Box>
                       <div>
@@ -137,13 +124,13 @@ function HeadSection(props) {
                             variant={isWidthUpLg ? "h6" : "body1"}
                             color="textSecondary"
                           >
-                            We leverage cutting-edge technology to provide your firm talented candidates
+                            We find you the right match based on your skillset
                           </Typography>
                           <Typography
                               variant={isWidthUpLg ? "h6" : "body1"}
                               color="textSecondary"
                             >
-                            Build the sparkling bright future of your company with top 1% of the talent
+                            Bright Future awaits for you with upcoming curated trainings and blog posts
                           </Typography>
                         </Box>
                         <Button
@@ -153,7 +140,7 @@ function HeadSection(props) {
                           className={classes.extraLargeButton}
                           classes={{ label: classes.extraLargeButtonLabel }}
                         >
-                          Register Your Company
+                          Register As Candidate
                         </Button>
                       </div>
                     </Box>
@@ -161,7 +148,7 @@ function HeadSection(props) {
                   <Hidden mdDown>
                     <Grid item md={6}>
                       <ZoomImage
-                        src={`${process.env.PUBLIC_URL}/images/logged_out/employers.jpeg`}
+                        src={`${process.env.PUBLIC_URL}/images/logged_out/candidates.jpeg`}
                         className={classes.image}
                         alt="header example"
                       />
