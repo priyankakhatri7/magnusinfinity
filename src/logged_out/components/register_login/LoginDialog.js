@@ -8,6 +8,8 @@ import FormDialog from "../../../shared/components/FormDialog";
 import HighlightedInformation from "../../../shared/components/HighlightedInformation";
 import ButtonCircularProgress from "../../../shared/components/ButtonCircularProgress";
 import VisibilityPasswordTextField from "../../../shared/components/VisibilityPasswordTextField";
+import { login } from '../../../util/APIUtils';
+import { ACCESS_TOKEN } from '../../../constants';
 
 const styles = (theme) => ({
   forgotPassword: {
@@ -44,24 +46,41 @@ function LoginDialog(props) {
   const loginEmail = useRef();
   const loginPassword = useRef();
 
-  const login = useCallback(() => {
+  const loginSubmit = useCallback(() => {
     setIsLoading(true);
     setStatus(null);
-    if (loginEmail.current.value !== "test@web.com") {
-      setTimeout(() => {
-        setStatus("invalidEmail");
-        setIsLoading(false);
-      }, 1500);
-    } else if (loginPassword.current.value !== "HaRzwc") {
-      setTimeout(() => {
-        setStatus("invalidPassword");
-        setIsLoading(false);
-      }, 1500);
-    } else {
-      setTimeout(() => {
-        history.push("/c/dashboard");
-      }, 150);
+    const loginRequest = {
+        email: loginEmail.current.value,
+        password: loginPassword.current.value
     }
+
+    login(loginRequest)
+        .then(response => {
+            localStorage.setItem(ACCESS_TOKEN, response.accessToken);
+            console.log("You're successfully logged in!");
+            setIsLoading(false);
+            //Alert.success("You're successfully logged in!");
+            history.push("/c/dashboard");
+        }).catch(error => {
+            setIsLoading(false);
+            //Alert.error((error && error.message) || 'Oops! Something went wrong. Please try again!');
+            console.log((error && error.message) || 'Oops! Something went wrong. Please try again!');
+        });
+//    if (loginEmail.current.value !== "test@web.com") {
+//      setTimeout(() => {
+//        setStatus("invalidEmail");
+//        setIsLoading(false);
+//      }, 1500);
+//    } else if (loginPassword.current.value !== "HaRzwc") {
+//      setTimeout(() => {
+//        setStatus("invalidPassword");
+//        setIsLoading(false);
+//      }, 1500);
+//    } else {
+//      setTimeout(() => {
+//        history.push("/c/dashboard");
+//      }, 150);
+//    }
   }, [setIsLoading, loginEmail, loginPassword, history, setStatus]);
 
   return (
@@ -72,7 +91,7 @@ function LoginDialog(props) {
         loading={isLoading}
         onFormSubmit={(e) => {
           e.preventDefault();
-          login();
+          loginSubmit();
         }}
         hideBackdrop
         headline="Login"

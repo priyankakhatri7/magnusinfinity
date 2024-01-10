@@ -6,6 +6,8 @@ import FormDialog from "../../../shared/components/FormDialog";
 import HighlightedInformation from "../../../shared/components/HighlightedInformation";
 import ButtonCircularProgress from "../../../shared/components/ButtonCircularProgress";
 import VisibilityPasswordTextField from "../../../shared/components/VisibilityPasswordTextField";
+import { signup } from '../../../util/APIUtils';
+//import Alert from 'react-s-alert'
 
 const styles = (theme) => ({
   link: {
@@ -25,10 +27,12 @@ const styles = (theme) => ({
 });
 
 function RegisterDialog(props) {
-  const { setStatus, theme, onClose, openTermsDialog, status, classes } = props;
+  const { setStatus, theme, onClose, openTermsDialog, status, classes, history } = props;
   const [isLoading, setIsLoading] = useState(false);
   const [hasTermsOfServiceError, setHasTermsOfServiceError] = useState(false);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const registerName = useRef();
+  const registerEmail = useRef();
   const registerTermsCheckbox = useRef();
   const registerPassword = useRef();
   const registerPasswordRepeat = useRef();
@@ -44,15 +48,39 @@ function RegisterDialog(props) {
       setStatus("passwordsDontMatch");
       return;
     }
+    if(registerName.current.value === '' ){
+        setStatus("invalidName");
+        return;
+    }
     setStatus(null);
     setIsLoading(true);
+
+    //call to api
+    const signUpRequest = {
+        name : registerName.current.value,
+        email : registerEmail.current.value,
+        password : registerPassword.current.value
+    }
+
+    signup(signUpRequest)
+        .then(response => {
+            console.log("You're successfully registered. Please login to continue!")
+            //Alert.success("You're successfully registered. Please login to continue!");
+            //history.push("/login");
+        }).catch(error => {
+            console.log((error && error.message) || 'Oops! Something went wrong. Please try again!');
+            //Alert.error((error && error.message) || 'Oops! Something went wrong. Please try again!');
+        });
+
     setTimeout(() => {
       setIsLoading(false);
+      onClose();
     }, 1500);
   }, [
     setIsLoading,
     setStatus,
     setHasTermsOfServiceError,
+    registerEmail,
     registerPassword,
     registerPasswordRepeat,
     registerTermsCheckbox,
@@ -77,8 +105,27 @@ function RegisterDialog(props) {
             margin="normal"
             required
             fullWidth
+            error={status === "invalidName"}
+            label="Name"
+            inputRef={registerName}
+            autoFocus
+            autoComplete="off"
+            type="text"
+            onChange={() => {
+              if (status === "invalidName") {
+                setStatus(null);
+              }
+            }}
+            FormHelperTextProps={{ error: true }}
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
             error={status === "invalidEmail"}
             label="Email Address"
+            inputRef={registerEmail}
             autoFocus
             autoComplete="off"
             type="email"
