@@ -29,10 +29,12 @@ function DialogSelector(props) {
       case "register":
         return (
           <RegisterDialog
+            open
             onClose={_onClose}
             openTermsDialog={openTermsDialog}
             status={registerStatus}
             setStatus={setRegisterStatus}
+            userType="candidate"
           />
         );
       case "termsOfService":
@@ -40,6 +42,7 @@ function DialogSelector(props) {
       case "login":
         return (
           <LoginDialog
+            open
             onClose={_onClose}
             status={loginStatus}
             setStatus={setLoginStatus}
@@ -49,6 +52,7 @@ function DialogSelector(props) {
       case "changePassword":
         return (
           <ChangePasswordDialog
+            open
             setLoginStatus={setLoginStatus}
             onClose={openLoginDialog}
           />

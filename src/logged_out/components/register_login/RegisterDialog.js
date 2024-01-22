@@ -27,7 +27,7 @@ const styles = (theme) => ({
 });
 
 function RegisterDialog(props) {
-  const { setStatus, theme, onClose, openTermsDialog, status, classes, history } = props;
+  const { setStatus, theme, onClose, openTermsDialog, status, classes, history, userType, open } = props;
   const [isLoading, setIsLoading] = useState(false);
   const [hasTermsOfServiceError, setHasTermsOfServiceError] = useState(false);
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -59,7 +59,8 @@ function RegisterDialog(props) {
     const signUpRequest = {
         name : registerName.current.value,
         email : registerEmail.current.value,
-        password : registerPassword.current.value
+        password : registerPassword.current.value,
+        userType : userType
     }
 
     signup(signUpRequest)
@@ -90,7 +91,7 @@ function RegisterDialog(props) {
     <FormDialog
       loading={isLoading}
       onClose={onClose}
-      open
+      open={open}
       headline="Register"
       onFormSubmit={(e) => {
         e.preventDefault();

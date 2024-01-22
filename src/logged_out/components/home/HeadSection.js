@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { useState, useCallback, Fragment } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
 import { Grid, Typography, Card, Button, Hidden, Box } from "@mui/material";
@@ -6,6 +6,8 @@ import withStyles from "@mui/styles/withStyles";
 import WaveBorder from "../../../shared/components/WaveBorder";
 import ZoomImage from "../../../shared/components/ZoomImage";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import RegisterDialog from "../register_login/RegisterDialog";
+import TermsOfServiceDialog from "../register_login/TermsOfServiceDialog";
 import {
   FiCard,
   FiCardActionArea,
@@ -100,7 +102,33 @@ const styles = (theme) => ({
 function HeadSection(props) {
   const { classes, theme } = props;
   const isWidthUpLg = useMediaQuery(theme.breakpoints.up("lg"));
+  const [registerStatus, setRegisterStatus, dialogOpen, setDialogOpen] = useState(null);
+  const [open, setOpen] = React.useState(false);
 
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const onClose = useCallback(() => {
+    //setDialogOpen(null);
+    setOpen(false);
+  }, [setDialogOpen, setOpen]);
+
+  const openTermsDialog = useCallback(() => {
+    setDialogOpen("termsOfService");
+  }, [setDialogOpen]);
+
+  const openRegisterDialog = useCallback(() => {
+    setDialogOpen("register");
+  }, [setDialogOpen]);
+
+  const _onClose = useCallback(() => {
+    setRegisterStatus(null);
+    setOpen(false)
+    onClose();
+  }, [onClose, setRegisterStatus]);
+
+//Todo Fix terms of service
   return (
     <Fragment>
       <div className={classNames("lg-p-top", classes.wrapper)}>
@@ -152,9 +180,18 @@ function HeadSection(props) {
                           fullWidth
                           className={classes.extraLargeButton}
                           classes={{ label: classes.extraLargeButtonLabel }}
+                          onClick={handleClickOpen}
                         >
                           Register Your Company
                         </Button>
+                        <RegisterDialog
+                            open={open}
+                            onClose={_onClose}
+                            openTermsDialog={openTermsDialog}
+                            status={registerStatus}
+                            setStatus={setRegisterStatus}
+                            userType="employer"
+                        />
                       </div>
                     </Box>
                   </Grid>
