@@ -5,6 +5,7 @@ import SettingsArea from "./SettingsArea";
 import UserDataArea from "./UserDataArea";
 import AccountInformationArea from "./AccountInformationArea";
 import StatisticsArea from "./StatisticsArea";
+import CandidateProfile from "./CandidateProfile";
 
 function Dashboard(props) {
   const {
@@ -31,6 +32,11 @@ function Dashboard(props) {
       <AccountInformationArea
         isAccountActivated={isAccountActivated}
         toggleAccountActivation={toggleAccountActivation}
+      />
+      <CandidateProfile
+        resume="This is a summary of my resume."
+        experience={["Experience 1", "Experience 2"]}
+        otherDetails={"No additional details provided."}
       />
       <Box mt={4}>
         <Typography variant="subtitle1" gutterBottom>

@@ -267,6 +267,7 @@ function RegisterDialog(props) {
           size="large"
           color="secondary"
           disabled={isLoading}
+          onSubmit={register}
         >
           Register
           {isLoading && <ButtonCircularProgress />}
